@@ -1,0 +1,59 @@
+{% extends 'VinllaLandingBundle:Default:base.html.twig' %}
+
+{% block main %}
+				<!-- Product Heading Section Starts Here -->
+		<div class="productHeadingType1">
+			<img src="/bundles/vinllalanding/img/productBox.jpg" alt="Conversion - Premium Landing Page" class="productImg fl" />
+			
+			<div class="productText fl">
+				<h1>Vinlla Cloud</h1>
+				
+				<ul class="checkList">
+					<li>Mendukung Sistem Operasi 32-Bit dan 64-Bit </li>
+				</ul>
+			</div> <!-- end productText -->
+			
+			<div class="productPrice fr">
+				<div class="productPriceContainer">
+					<div id="buttonDarkBG">
+						<a class="buttonLink" href="{{ path('VinllaLandingBundle_download') }}" title="">Unduh Gratis</a>
+					</div> <!-- end buttonDarkBG -->
+				</div> <!-- end productPriceContainer -->
+			</div> <!-- end productPrice -->
+		</div> <!-- end productHeadingType1 -->
+		<div class="tabbedArea">
+			<div class="tabHeading">
+		        <ul class="tabs">  
+		            <li class="active"><a href="#tab1">Tentang Vinlla</a></li>  
+		            <li><a href="#tab2">Arsitektur Vinlla</a></li>
+					<li><a href="#tab3">Instalasi Vinlla</a></li>
+		        </ul>
+	        </div> <!-- end tabHeading -->
+	  		
+	  		<div class="tabContainer">
+		        <div class="tabContent" id="tab1" style="display: none;">
+		        	<p>This section can be used to showcase a product image or just to show text.</p>
+
+		        	<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta commodo varius. Etiam gravida, nibh in luctus dictum, nisl justo dictum odio, id imperdiet metus lorem varius eros. 
+					</p><p>
+					Donec vitae elit orci. In sit amet eros sit amet nunc lobortis volutpat a non lectus. Nam magna augue, interdum sed placerat vel, rhoncus id metus. Donec a pulvinar augue. Sed interdum viverra vulputate. Cras 					suscipit condimentum ipsum non congue. In gravida molestie sapien, eu ultricies tortor rhoncus quis. 
+					
+					</p><p>Pellentesque vestibulum nisl quis dui bibendum feugiat rhoncus nunc adipiscing. Mauris vel magna eget mi egestas rhoncus. Suspendisse vitae turpis et arcu tristique auctor luctus non lorem.
+		        	</p>
+		        </div>  
+		        <div class="tabContent" id="tab2" style="display: none;">
+		        	<h2>Section title</h2>
+		        	<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta commodo varius. Etiam gravida, nibh in luctus dictum, nisl justo dictum odio, id imperdiet metus lorem varius eros. 
+					</p><p>
+					Donec vitae elit orci. In sit amet eros sit amet nunc lobortis volutpat a non lectus. Nam magna augue, interdum sed placerat vel, rhoncus id metus. Donec a pulvinar augue. Sed interdum viverra vulputate. Cras 					suscipit condimentum ipsum non congue. In gravida molestie sapien, eu ultricies tortor rhoncus quis. 
+					
+					</p><p>Pellentesque vestibulum nisl quis dui bibendum feugiat rhoncus nunc adipiscing. Mauris vel magna eget mi egestas rhoncus. Suspendisse vitae turpis et arcu tristique auctor luctus non lorem.
+		        	</p>
+		        </div>
+	        </div> <!-- end tabContainer -->
+		</div>
+
+		
+{% endblock %}

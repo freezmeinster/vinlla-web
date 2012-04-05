@@ -1,0 +1,11 @@
+VinllaLandingBundle_homepage:
+    pattern:  /
+    defaults: { _controller: VinllaLandingBundle:Default:index }
+
+VinllaLandingBundle_feature:
+    pattern:  /feature
+    defaults: { _controller: VinllaLandingBundle:Default:feature }
+
+VinllaLandingBundle_download:
+    pattern:  /get-vinlla
+    defaults: { _controller: VinllaLandingBundle:Default:download }

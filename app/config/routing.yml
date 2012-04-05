@@ -1,0 +1,8 @@
+VinllaLandingBundle:
+    resource: "@VinllaLandingBundle/Resources/config/routing.yml"
+    prefix:   /
+
+VinllaBlogBundle:
+    resource: "@VinllaBlogBundle/Resources/config/routing.yml"
+    prefix:   /blog
+

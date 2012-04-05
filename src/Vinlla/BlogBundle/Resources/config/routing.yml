@@ -1,0 +1,3 @@
+VinllaBlogBundle_homepage:
+    pattern:  /
+    defaults: { _controller: VinllaBlogBundle:Default:index }
