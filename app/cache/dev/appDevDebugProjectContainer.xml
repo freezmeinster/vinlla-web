@@ -338,7 +338,7 @@
     <parameter key="assetic.enable_profiler">false</parameter>
     <parameter key="assetic.read_from">/var/www/htdocs/vinlla/app/../web</parameter>
     <parameter key="assetic.write_to">/var/www/htdocs/vinlla/app/../web</parameter>
-    <parameter key="assetic.java.bin">/usr/lib64/java/bin/java</parameter>
+    <parameter key="assetic.java.bin">/usr/bin/java</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
@@ -1599,7 +1599,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="VinllaLandingBundle">Vinlla\LandingBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service">
@@ -1630,7 +1632,23 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false"/>
+              <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service">
+                        <service class="Symfony\Bridge\Doctrine\Annotations\IndexedReader" public="false">
+                          <argument type="service" id="annotation_reader"/>
+                        </service>
+                      </argument>
+                      <argument type="collection">
+                        <argument>/var/www/htdocs/vinlla/src/Vinlla/LandingBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Vinlla\LandingBundle\Entity</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">

@@ -1,11 +1,35 @@
 VinllaLandingBundle_homepage:
     pattern:  /
     defaults: { _controller: VinllaLandingBundle:Default:index }
+    requirements:
+        _method:  GET
 
 VinllaLandingBundle_feature:
     pattern:  /feature
     defaults: { _controller: VinllaLandingBundle:Default:feature }
+    requirements:
+        _method:  GET
 
 VinllaLandingBundle_download:
     pattern:  /get-vinlla
     defaults: { _controller: VinllaLandingBundle:Default:download }
+    requirements:
+        _method:  GET
+
+VinllaLandingBundle_admin_index:
+    pattern:  /admin/
+    defaults: { _controller: VinllaLandingBundle:Admin:index }
+    requirements:
+        _method:  GET
+
+VinllaLandingBundle_admin_feature_list:
+    pattern:  /admin/feature
+    defaults: { _controller: VinllaLandingBundle:Admin:feature_list }
+    requirements:
+        _method:  GET
+
+VinllaLandingBundle_admin_feature_add:
+    pattern:  /admin/feature-add
+    defaults: { _controller: VinllaLandingBundle:Admin:feature_add }
+    requirements:
+        _method:  GET|POST

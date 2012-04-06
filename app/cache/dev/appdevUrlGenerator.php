@@ -13,15 +13,6 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
 class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerator
 {
     static private $declaredRouteNames = array(
-       '_demo_login' => true,
-       '_security_check' => true,
-       '_demo_logout' => true,
-       'acme_demo_secured_hello' => true,
-       '_demo_secured_hello' => true,
-       '_demo_secured_hello_admin' => true,
-       '_demo' => true,
-       '_demo_hello' => true,
-       '_demo_contact' => true,
        '_wdt' => true,
        '_profiler_search' => true,
        '_profiler_purge' => true,
@@ -35,6 +26,9 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'VinllaLandingBundle_homepage' => true,
        'VinllaLandingBundle_feature' => true,
        'VinllaLandingBundle_download' => true,
+       'VinllaLandingBundle_admin_index' => true,
+       'VinllaLandingBundle_admin_feature_list' => true,
+       'VinllaLandingBundle_admin_feature_add' => true,
        'VinllaBlogBundle_homepage' => true,
     );
 
@@ -57,51 +51,6 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         list($variables, $defaults, $requirements, $tokens) = $this->{'get'.$escapedName.'RouteInfo'}();
 
         return $this->doGenerate($variables, $defaults, $requirements, $tokens, $parameters, $name, $absolute);
-    }
-
-    private function get_demo_loginRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::loginAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/login',  ),));
-    }
-
-    private function get_security_checkRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::securityCheckAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/login_check',  ),));
-    }
-
-    private function get_demo_logoutRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::logoutAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/logout',  ),));
-    }
-
-    private function getacme_demo_secured_helloRouteInfo()
-    {
-        return array(array (), array (  'name' => 'World',  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/hello',  ),));
-    }
-
-    private function get_demo_secured_helloRouteInfo()
-    {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/demo/secured/hello',  ),));
-    }
-
-    private function get_demo_secured_hello_adminRouteInfo()
-    {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloadminAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/demo/secured/hello/admin',  ),));
-    }
-
-    private function get_demoRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/',  ),));
-    }
-
-    private function get_demo_helloRouteInfo()
-    {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::helloAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/demo/hello',  ),));
-    }
-
-    private function get_demo_contactRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::contactAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/contact',  ),));
     }
 
     private function get_wdtRouteInfo()
@@ -156,17 +105,32 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getVinllaLandingBundle_homepageRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
+        return array(array (), array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::indexAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
     }
 
     private function getVinllaLandingBundle_featureRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::featureAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/feature',  ),));
+        return array(array (), array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::featureAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/feature',  ),));
     }
 
     private function getVinllaLandingBundle_downloadRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::downloadAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/get-vinlla',  ),));
+        return array(array (), array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::downloadAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/get-vinlla',  ),));
+    }
+
+    private function getVinllaLandingBundle_admin_indexRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\AdminController::indexAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/admin/',  ),));
+    }
+
+    private function getVinllaLandingBundle_admin_feature_listRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\AdminController::feature_listAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/admin/feature',  ),));
+    }
+
+    private function getVinllaLandingBundle_admin_feature_addRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\AdminController::feature_addAction',), array (  '_method' => 'GET|POST',), array (  0 =>   array (    0 => 'text',    1 => '/admin/feature-add',  ),));
     }
 
     private function getVinllaBlogBundle_homepageRouteInfo()
