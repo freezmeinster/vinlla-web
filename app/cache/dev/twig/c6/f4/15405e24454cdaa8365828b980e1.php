@@ -63,7 +63,7 @@ class __TwigTemplate_c6f415405e24454cdaa8365828b980e1 extends Twig_Template
 \t\t\t\t<div class=\"formRow\">
                         <div class=\"formLeft\">";
         // line 20
-        echo $this->env->getExtension('form')->renderRow($this->getAttribute($this->getContext($context, "form"), "keterangan"));
+        echo $this->env->getExtension('form')->renderWidget($this->getAttribute($this->getContext($context, "form"), "keterangan"), array("attr" => array("class" => "editor")));
         echo "</div>
                         <div class=\"clear\"></div>
                     </div>

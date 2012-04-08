@@ -17,7 +17,7 @@
                     </div>
 				
 				<div class="formRow">
-                        <div class="formLeft">{{ form_row(form.keterangan )}}</div>
+                        <div class="formLeft">{{ form_widget(form.keterangan,{ 'attr': {'class': 'editor'} })}}</div>
                         <div class="clear"></div>
                     </div>
 					{{ form_rest(form) }}

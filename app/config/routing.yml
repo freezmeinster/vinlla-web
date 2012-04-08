@@ -6,3 +6,4 @@ VinllaBlogBundle:
     resource: "@VinllaBlogBundle/Resources/config/routing.yml"
     prefix:   /blog
 
+

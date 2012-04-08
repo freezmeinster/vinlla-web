@@ -1,3 +1,11 @@
+vinlla_admin:
+    resource: "@VinllaLandingBundle/Resources/config/routing_admin.yml"
+    prefix:   /admin
+
+vinlla_secured:
+     resource: "@VinllaLandingBundle/Resources/config/routing_login.yml"
+     prefix:   /secured
+
 VinllaLandingBundle_homepage:
     pattern:  /
     defaults: { _controller: VinllaLandingBundle:Default:index }
@@ -5,31 +13,15 @@ VinllaLandingBundle_homepage:
         _method:  GET
 
 VinllaLandingBundle_feature:
-    pattern:  /feature
+    pattern:  /fitur/{id}.html
     defaults: { _controller: VinllaLandingBundle:Default:feature }
     requirements:
         _method:  GET
+        id: \d+
 
 VinllaLandingBundle_download:
-    pattern:  /get-vinlla
+    pattern:  /unduh-vinlla.html
     defaults: { _controller: VinllaLandingBundle:Default:download }
     requirements:
         _method:  GET
 
-VinllaLandingBundle_admin_index:
-    pattern:  /admin/
-    defaults: { _controller: VinllaLandingBundle:Admin:index }
-    requirements:
-        _method:  GET
-
-VinllaLandingBundle_admin_feature_list:
-    pattern:  /admin/feature
-    defaults: { _controller: VinllaLandingBundle:Admin:feature_list }
-    requirements:
-        _method:  GET
-
-VinllaLandingBundle_admin_feature_add:
-    pattern:  /admin/feature-add
-    defaults: { _controller: VinllaLandingBundle:Admin:feature_add }
-    requirements:
-        _method:  GET|POST

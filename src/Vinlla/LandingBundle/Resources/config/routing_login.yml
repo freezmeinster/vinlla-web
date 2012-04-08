@@ -1,0 +1,11 @@
+VinllaLandingBundle_login_check:
+    pattern:  /login-check
+    defaults: { _controller: VinllaLandingBundle:Default:index }
+    requirements:
+        _method:  GET
+
+VinllaLandingBundle_login:
+    pattern:  /login
+    defaults: { _controller: VinllaLandingBundle:Default:index }
+    requirements:
+        _method:  GET

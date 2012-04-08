@@ -20,7 +20,10 @@
             <tr class="gradeX">
             <td>{{ fitur.nama }}</td>
             <td>{{ fitur.keterangan }}</td>
-			<td>as</td>
+			<td>
+				<a style="margin: 5px;" class="smallButton" title="" href="{{ path('VinllaLandingBundle_admin_feature_update', {'id': fitur.id  } )}}">
+					<img alt="" src="/bundles/vinllalanding/admin/images/icons/color/pencil.png">
+				</a></td>
             </tr>
 			{% endfor %}
             </tbody>
@@ -31,7 +34,7 @@
 				<li>
 					<a title="" href="{{ path('VinllaLandingBundle_admin_feature_add')}}">
 						<img alt="" src="/bundles/vinllalanding/admin/images/icons/control/16/pencil.png">
-						<span>Add new session</span>
+						<span>Tambah Fitur</span>
 					</a>
 				</li>
 			</ul>

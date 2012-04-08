@@ -34,15 +34,31 @@ class __TwigTemplate_d96a9eeae6fd5c9af16a39b4fc3d62af extends Twig_Template
 \t\t\t\t<h1>Vinlla Cloud</h1>
 \t\t\t\t
 \t\t\t\t<ul class=\"checkList\">
-\t\t\t\t\t<li>Mendukung Sistem Operasi 32-Bit dan 64-Bit </li>
-\t\t\t\t</ul>
+\t\t\t\t\t";
+        // line 12
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "fiturs"));
+        foreach ($context['_seq'] as $context["_key"] => $context["fitur"]) {
+            // line 13
+            echo "\t\t\t\t\t<li><a href=\"";
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("VinllaLandingBundle_feature", array("id" => $this->getAttribute($this->getContext($context, "fitur"), "id"))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "fitur"), "nama"), "html", null, true);
+            echo "</a></li>
+\t\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['fitur'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 15
+        echo "\t\t\t\t</ul>
 \t\t\t</div> <!-- end productText -->
 \t\t\t
 \t\t\t<div class=\"productPrice fr\">
 \t\t\t\t<div class=\"productPriceContainer\">
 \t\t\t\t\t<div id=\"buttonDarkBG\">
 \t\t\t\t\t\t<a class=\"buttonLink\" href=\"";
-        // line 19
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("VinllaLandingBundle_download"), "html", null, true);
         echo "\" title=\"\">Unduh Gratis</a>
 \t\t\t\t\t</div> <!-- end buttonDarkBG -->
@@ -51,36 +67,91 @@ class __TwigTemplate_d96a9eeae6fd5c9af16a39b4fc3d62af extends Twig_Template
 \t\t</div> <!-- end productHeadingType1 -->
 \t\t<div class=\"tabbedArea\">
 \t\t\t<div class=\"tabHeading\">
-\t\t        <ul class=\"tabs\">  
-\t\t            <li class=\"active\"><a href=\"#tab1\">Tentang Vinlla</a></li>  
-\t\t            <li><a href=\"#tab2\">Arsitektur Vinlla</a></li>
-\t\t\t\t\t<li><a href=\"#tab3\">Instalasi Vinlla</a></li>
-\t\t        </ul>
+\t\t        <ul class=\"tabs\">
+\t\t\t\t\t";
+        // line 29
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "infos"));
+        $context['loop'] = array(
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        );
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["info"]) {
+            // line 30
+            echo "\t\t            <li><a href=\"#tab";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "loop"), "index"), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "info"), "judul"), "html", null, true);
+            echo "</a></li>
+\t\t\t\t\t";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['info'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 32
+        echo "\t\t        </ul>
 \t        </div> <!-- end tabHeading -->
 \t  \t\t
 \t  \t\t<div class=\"tabContainer\">
-\t\t        <div class=\"tabContent\" id=\"tab1\" style=\"display: none;\">
-\t\t        \t<p>This section can be used to showcase a product image or just to show text.</p>
-
-\t\t        \t<p>
-\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta commodo varius. Etiam gravida, nibh in luctus dictum, nisl justo dictum odio, id imperdiet metus lorem varius eros. 
-\t\t\t\t\t</p><p>
-\t\t\t\t\tDonec vitae elit orci. In sit amet eros sit amet nunc lobortis volutpat a non lectus. Nam magna augue, interdum sed placerat vel, rhoncus id metus. Donec a pulvinar augue. Sed interdum viverra vulputate. Cras \t\t\t\t\tsuscipit condimentum ipsum non congue. In gravida molestie sapien, eu ultricies tortor rhoncus quis. 
-\t\t\t\t\t
-\t\t\t\t\t</p><p>Pellentesque vestibulum nisl quis dui bibendum feugiat rhoncus nunc adipiscing. Mauris vel magna eget mi egestas rhoncus. Suspendisse vitae turpis et arcu tristique auctor luctus non lorem.
-\t\t        \t</p>
-\t\t        </div>  
-\t\t        <div class=\"tabContent\" id=\"tab2\" style=\"display: none;\">
-\t\t        \t<h2>Section title</h2>
-\t\t        \t<p>
-\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta commodo varius. Etiam gravida, nibh in luctus dictum, nisl justo dictum odio, id imperdiet metus lorem varius eros. 
-\t\t\t\t\t</p><p>
-\t\t\t\t\tDonec vitae elit orci. In sit amet eros sit amet nunc lobortis volutpat a non lectus. Nam magna augue, interdum sed placerat vel, rhoncus id metus. Donec a pulvinar augue. Sed interdum viverra vulputate. Cras \t\t\t\t\tsuscipit condimentum ipsum non congue. In gravida molestie sapien, eu ultricies tortor rhoncus quis. 
-\t\t\t\t\t
-\t\t\t\t\t</p><p>Pellentesque vestibulum nisl quis dui bibendum feugiat rhoncus nunc adipiscing. Mauris vel magna eget mi egestas rhoncus. Suspendisse vitae turpis et arcu tristique auctor luctus non lorem.
-\t\t        \t</p>
+\t\t\t\t";
+        // line 36
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "infos"));
+        $context['loop'] = array(
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        );
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["info"]) {
+            // line 37
+            echo "\t\t        <div class=\"tabContent\" id=\"tab";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "loop"), "index"), "html", null, true);
+            echo "\" style=\"display: none;\">
+\t\t\t\t\t";
+            // line 38
+            echo $this->getAttribute($this->getContext($context, "info"), "isi");
+            echo "
 \t\t        </div>
-\t        </div> <!-- end tabContainer -->
+\t\t\t\t";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['info'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 41
+        echo "\t        </div> <!-- end tabContainer -->
 \t\t</div>
 
 \t\t

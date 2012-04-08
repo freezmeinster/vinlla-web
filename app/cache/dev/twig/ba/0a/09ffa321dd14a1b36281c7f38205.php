@@ -67,14 +67,20 @@ class __TwigTemplate_ba0a09ffa321dd14a1b36281c7f38205 extends Twig_Template
             // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "fitur"), "keterangan"), "html", null, true);
             echo "</td>
-\t\t\t<td>as</td>
+\t\t\t<td>
+\t\t\t\t<a style=\"margin: 5px;\" class=\"smallButton\" title=\"\" href=\"";
+            // line 24
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("VinllaLandingBundle_admin_feature_update", array("id" => $this->getAttribute($this->getContext($context, "fitur"), "id"))), "html", null, true);
+            echo "\">
+\t\t\t\t\t<img alt=\"\" src=\"/bundles/vinllalanding/admin/images/icons/color/pencil.png\">
+\t\t\t\t</a></td>
             </tr>
 \t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['fitur'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 26
+        // line 29
         echo "            </tbody>
             </table>  
         </div>
@@ -82,11 +88,11 @@ class __TwigTemplate_ba0a09ffa321dd14a1b36281c7f38205 extends Twig_Template
 \t\t\t<ul>
 \t\t\t\t<li>
 \t\t\t\t\t<a title=\"\" href=\"";
-        // line 32
+        // line 35
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("VinllaLandingBundle_admin_feature_add"), "html", null, true);
         echo "\">
 \t\t\t\t\t\t<img alt=\"\" src=\"/bundles/vinllalanding/admin/images/icons/control/16/pencil.png\">
-\t\t\t\t\t\t<span>Add new session</span>
+\t\t\t\t\t\t<span>Tambah Fitur</span>
 \t\t\t\t\t</a>
 \t\t\t\t</li>
 \t\t\t</ul>

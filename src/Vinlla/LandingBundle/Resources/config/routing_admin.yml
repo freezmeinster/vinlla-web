@@ -1,0 +1,55 @@
+VinllaLandingBundle_admin_index:
+    pattern:  /
+    defaults: { _controller: VinllaLandingBundle:Admin:index }
+    requirements:
+        _method:  GET
+
+VinllaLandingBundle_admin_feature_list:
+    pattern:  /feature
+    defaults: { _controller: VinllaLandingBundle:Admin:feature_list }
+    requirements:
+        _method:  GET
+
+VinllaLandingBundle_admin_feature_add:
+    pattern:  /feature-add
+    defaults: { _controller: VinllaLandingBundle:Admin:feature_add }
+    requirements:
+        _method:  GET|POST
+
+VinllaLandingBundle_admin_feature_update:
+    pattern:  /feature-update/{id}
+    defaults: { _controller: VinllaLandingBundle:Admin:feature_update }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+
+VinllaLandingBundle_admin_info_list:
+    pattern:  /info
+    defaults: { _controller: VinllaLandingBundle:Admin:info_list }
+    requirements:
+        _method:  GET
+
+VinllaLandingBundle_admin_info_add:
+    pattern:  /info-add
+    defaults: { _controller: VinllaLandingBundle:Admin:info_add }
+    requirements:
+        _method:  GET|POST
+
+VinllaLandingBundle_admin_info_update:
+    pattern:  /info-update/{id}
+    defaults: { _controller: VinllaLandingBundle:Admin:info_update }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+
+VinllaLandingBundle_admin_media_list:
+    pattern:  /media
+    defaults: { _controller: VinllaLandingBundle:Admin:media_list }
+    requirements:
+        _method:  GET
+
+VinllaLandingBundle_admin_media_add:
+    pattern:  /media-add
+    defaults: { _controller: VinllaLandingBundle:Admin:media_add }
+    requirements:
+        _method:  GET|POST

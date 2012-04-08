@@ -1,0 +1,42 @@
+{% extends 'VinllaLandingBundle:Admin:base.html.twig' %}
+
+{% block title %}List fitur Vinlla{% endblock%}
+{% block tag %}Anda dapat melakukan manajemen infromasi dari list fitur vinlla {% endblock %}
+
+{% block main %}
+ <div class="widget">
+
+            <div class="title"><h6>List Fiture</h6></div>                          
+            <table cellpadding="0" cellspacing="0" border="0" class="display dTable">
+            <thead>
+            <tr>
+            <th>Nama</th>
+            <th>Url</th>
+			<th>Aksi</th>
+            </tr>
+            </thead>
+            <tbody>
+			{% for media in medias %}
+            <tr class="gradeX">
+            <td>{{ media.name }}</td>
+            <td>/{{ media.webpath }}</td>
+			<td>
+				<a style="margin: 5px;" class="smallButton" title="" href="">
+					<img alt="" src="/bundles/vinllalanding/admin/images/icons/color/pencil.png">
+				</a></td>
+            </tr>
+			{% endfor %}
+            </tbody>
+            </table>  
+        </div>
+		<div class="horControlB">
+			<ul>
+				<li>
+					<a title="" href="{{ path('VinllaLandingBundle_admin_media_add')}}">
+						<img alt="" src="/bundles/vinllalanding/admin/images/icons/control/16/pencil.png">
+						<span>Tambah Media</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+{% endblock %}

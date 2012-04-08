@@ -165,7 +165,7 @@ $(function() {
 	
 	//===== WYSIWYG editor =====//
 	
-	$("#editor").cleditor({
+	$(".editor").cleditor({
 		width:"100%", 
 		height:"100%",
 		bodyStyle: "margin: 10px; font: 12px Arial,Verdana; cursor:text"

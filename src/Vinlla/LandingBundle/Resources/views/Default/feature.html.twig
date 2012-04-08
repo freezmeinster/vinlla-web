@@ -1,30 +1,15 @@
 {% extends 'VinllaLandingBundle:Default:base.html.twig' %}
 
 {% block main %}
-				
-
-		<!-- Product Testimonial Section Starts Here -->
 		<div class="testimonialContainer">
 			<div id="boxHeading">
-				<h3>Our Customers About Us</h3>
+				<h3>{{ fitur.nama }}</h3>
 			</div> <!-- end boxHeading -->
 			
 			<ul class="testimonials">
 				<li>
-					This is a great product. I got it a while ago and i couldn’t be happier with my choice. 
-					It’s definitely a good investment if you work in my field.
-					<br /><br />
-					<span>John Doe, CEO Great Company</span>
-				</li>
-
-				<li>
-					Another great testimonial.
-					<br /><br />
-					<span>Author, CEO Great Company</span>
+					{{ fitur.keterangan|raw }}
 				</li>
 			</ul>
-		</div> <!-- end testimonials -->
-		
-
-		
+		</div>
 {% endblock %}

@@ -9,7 +9,9 @@
 				<h1>Vinlla Cloud</h1>
 				
 				<ul class="checkList">
-					<li>Mendukung Sistem Operasi 32-Bit dan 64-Bit </li>
+					{% for fitur in fiturs %}
+					<li><a href="{{ path('VinllaLandingBundle_feature', {'id' : fitur.id })}}">{{ fitur.nama }}</a></li>
+					{% endfor %}
 				</ul>
 			</div> <!-- end productText -->
 			
@@ -23,35 +25,19 @@
 		</div> <!-- end productHeadingType1 -->
 		<div class="tabbedArea">
 			<div class="tabHeading">
-		        <ul class="tabs">  
-		            <li class="active"><a href="#tab1">Tentang Vinlla</a></li>  
-		            <li><a href="#tab2">Arsitektur Vinlla</a></li>
-					<li><a href="#tab3">Instalasi Vinlla</a></li>
+		        <ul class="tabs">
+					{% for info in infos %}
+		            <li><a href="#tab{{ loop.index }}">{{ info.judul }}</a></li>
+					{% endfor %}
 		        </ul>
 	        </div> <!-- end tabHeading -->
 	  		
 	  		<div class="tabContainer">
-		        <div class="tabContent" id="tab1" style="display: none;">
-		        	<p>This section can be used to showcase a product image or just to show text.</p>
-
-		        	<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta commodo varius. Etiam gravida, nibh in luctus dictum, nisl justo dictum odio, id imperdiet metus lorem varius eros. 
-					</p><p>
-					Donec vitae elit orci. In sit amet eros sit amet nunc lobortis volutpat a non lectus. Nam magna augue, interdum sed placerat vel, rhoncus id metus. Donec a pulvinar augue. Sed interdum viverra vulputate. Cras 					suscipit condimentum ipsum non congue. In gravida molestie sapien, eu ultricies tortor rhoncus quis. 
-					
-					</p><p>Pellentesque vestibulum nisl quis dui bibendum feugiat rhoncus nunc adipiscing. Mauris vel magna eget mi egestas rhoncus. Suspendisse vitae turpis et arcu tristique auctor luctus non lorem.
-		        	</p>
-		        </div>  
-		        <div class="tabContent" id="tab2" style="display: none;">
-		        	<h2>Section title</h2>
-		        	<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta commodo varius. Etiam gravida, nibh in luctus dictum, nisl justo dictum odio, id imperdiet metus lorem varius eros. 
-					</p><p>
-					Donec vitae elit orci. In sit amet eros sit amet nunc lobortis volutpat a non lectus. Nam magna augue, interdum sed placerat vel, rhoncus id metus. Donec a pulvinar augue. Sed interdum viverra vulputate. Cras 					suscipit condimentum ipsum non congue. In gravida molestie sapien, eu ultricies tortor rhoncus quis. 
-					
-					</p><p>Pellentesque vestibulum nisl quis dui bibendum feugiat rhoncus nunc adipiscing. Mauris vel magna eget mi egestas rhoncus. Suspendisse vitae turpis et arcu tristique auctor luctus non lorem.
-		        	</p>
+				{% for info in infos %}
+		        <div class="tabContent" id="tab{{ loop.index }}" style="display: none;">
+					{{ info.isi|raw }}
 		        </div>
+				{% endfor %}
 	        </div> <!-- end tabContainer -->
 		</div>
 

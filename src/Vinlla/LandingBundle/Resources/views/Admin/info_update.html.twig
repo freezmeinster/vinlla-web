@@ -1,0 +1,34 @@
+{% extends 'VinllaLandingBundle:Admin:base.html.twig' %}
+
+{% block title %}Tambah Fitur Vinlla{% endblock%}
+{% block tag %}Anda dapat melakukan manajemen infromasi dari list fitur vinlla {% endblock %}
+
+{% block main %}
+	{{ form_errors(form) }}
+  <form action="{{ path('VinllaLandingBundle_admin_info_update', {'id' : info_id }) }}" method="POST" class="form">
+	
+            <fieldset>
+                <div class="widget">
+                    <div class="title"><h6>Tambah Fitur</h6></div>
+
+                    <div class="formRow">
+                        <div class="formLeft">{{ form_row(form.judul)}}</div>
+                        <div class="clear"></div>
+                    </div>
+				<div class="formRow">
+                        <div class="formLeft">{{ form_row(form.slug )}}</div>
+                        <div class="clear"></div>
+                    </div>
+				
+				<div class="widget">
+                        <div class="formLeft">{{ form_widget(form.isi, { 'attr': {'class': 'editor'} } )}}</div>
+                        <div class="clear"></div>
+                    </div>
+					{{ form_rest(form) }}
+                    <div class="formSubmit"><input type="submit" value="Perbarui" class="redB" /></div>
+                    <div class="clear"></div>
+
+				</div>
+			</fieldset>
+	</form>
+{% endblock %}

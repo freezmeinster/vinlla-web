@@ -1,0 +1,29 @@
+{% extends 'VinllaLandingBundle:Admin:base.html.twig' %}
+
+{% block title %}Tambah Media Vinlla{% endblock%}
+{% block tag %}Anda dapat melakukan manajemen infromasi dari list fitur vinlla {% endblock %}
+
+{% block main %}
+	{{ form_errors(form) }}
+	<form action="#" method="post" {{ form_enctype(form) }}>
+    <fieldset>
+                <div class="widget">
+                    <div class="title"><h6>Tambah Media</h6></div>
+
+                    <div class="formRow">
+                        <div class="formLeft">{{ form_row(form.name)}}</div>
+                        <div class="clear"></div>
+                    </div>
+				<div class="formRow">
+                        <div class="formLeft">{{ form_row(form.file )}}</div>
+                        <div class="clear"></div>
+                    </div>
+
+					{{ form_rest(form) }}
+                    <div class="formSubmit"><input type="submit" value="Tambah" class="redB" /></div>
+                    <div class="clear"></div>
+
+				</div>
+			</fieldset>
+	</form>
+{% endblock %}
