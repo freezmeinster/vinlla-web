@@ -1,0 +1,15 @@
+{% extends 'VinllaLandingBundle:Default:base.html.twig' %}
+
+{% block main %}
+		<div class="testimonialContainer">
+			<div id="boxHeading">
+				<h3>{{ fitur.nama }}</h3>
+			</div> <!-- end boxHeading -->
+			
+			<ul class="testimonials">
+				<li>
+					{{ fitur.keterangan|raw }}
+				</li>
+			</ul>
+		</div>
+{% endblock %}

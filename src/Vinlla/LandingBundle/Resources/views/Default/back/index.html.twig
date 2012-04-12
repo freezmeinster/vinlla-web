@@ -1,0 +1,45 @@
+{% extends 'VinllaLandingBundle:Default:base.html.twig' %}
+
+{% block main %}
+				<!-- Product Heading Section Starts Here -->
+		<div class="productHeadingType1">
+			<img src="/bundles/vinllalanding/img/productBox.jpg" alt="Conversion - Premium Landing Page" class="productImg fl" />
+			
+			<div class="productText fl">
+				<h1>Vinlla Cloud</h1>
+				
+				<ul class="checkList">
+					{% for fitur in fiturs %}
+					<li><a href="{{ path('VinllaLandingBundle_feature', {'id' : fitur.id })}}">{{ fitur.nama }}</a></li>
+					{% endfor %}
+				</ul>
+			</div> <!-- end productText -->
+			
+			<div class="productPrice fr">
+				<div class="productPriceContainer">
+					<div id="buttonDarkBG">
+						<a class="buttonLink" href="{{ path('VinllaLandingBundle_download') }}" title="">Unduh Gratis</a>
+					</div> <!-- end buttonDarkBG -->
+				</div> <!-- end productPriceContainer -->
+			</div> <!-- end productPrice -->
+		</div> <!-- end productHeadingType1 -->
+		<div class="tabbedArea">
+			<div class="tabHeading">
+		        <ul class="tabs">
+					{% for info in infos %}
+		            <li><a href="#tab{{ loop.index }}">{{ info.judul }}</a></li>
+					{% endfor %}
+		        </ul>
+	        </div> <!-- end tabHeading -->
+	  		
+	  		<div class="tabContainer">
+				{% for info in infos %}
+		        <div class="tabContent" id="tab{{ loop.index }}" style="display: none;">
+					{{ info.isi|raw }}
+		        </div>
+				{% endfor %}
+	        </div> <!-- end tabContainer -->
+		</div>
+
+		
+{% endblock %}

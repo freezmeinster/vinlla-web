@@ -60,7 +60,7 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             not_VinllaLandingBundle_admin_feature_add:
 
             // VinllaLandingBundle_admin_feature_update
-            if (0 === strpos($pathinfo, '/admin/feature-update') && preg_match('#^/admin/feature\\-update/(?P<id>[^/]+?)$#xs', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/admin/feature-update') && preg_match('#^/admin/feature\\-update/(?P<id>\\d+)$#xs', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_VinllaLandingBundle_admin_feature_update;
@@ -89,6 +89,59 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             }
             not_VinllaLandingBundle_admin_info_add:
 
+            // VinllaLandingBundle_admin_info_update
+            if (0 === strpos($pathinfo, '/admin/info-update') && preg_match('#^/admin/info\\-update/(?P<id>\\d+)$#xs', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_VinllaLandingBundle_admin_info_update;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\AdminController::info_updateAction',)), array('_route' => 'VinllaLandingBundle_admin_info_update'));
+            }
+            not_VinllaLandingBundle_admin_info_update:
+
+            // VinllaLandingBundle_admin_media_list
+            if ($pathinfo === '/admin/media') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_VinllaLandingBundle_admin_media_list;
+                }
+                return array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\AdminController::media_listAction',  '_route' => 'VinllaLandingBundle_admin_media_list',);
+            }
+            not_VinllaLandingBundle_admin_media_list:
+
+            // VinllaLandingBundle_admin_media_add
+            if ($pathinfo === '/admin/media-add') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_VinllaLandingBundle_admin_media_add;
+                }
+                return array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\AdminController::media_addAction',  '_route' => 'VinllaLandingBundle_admin_media_add',);
+            }
+            not_VinllaLandingBundle_admin_media_add:
+
+        }
+
+        if (0 === strpos($pathinfo, '/secured')) {
+            // VinllaLandingBundle_login_check
+            if ($pathinfo === '/secured/login-check') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_VinllaLandingBundle_login_check;
+                }
+                return array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::indexAction',  '_route' => 'VinllaLandingBundle_login_check',);
+            }
+            not_VinllaLandingBundle_login_check:
+
+            // VinllaLandingBundle_login
+            if ($pathinfo === '/secured/login') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_VinllaLandingBundle_login;
+                }
+                return array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::indexAction',  '_route' => 'VinllaLandingBundle_login',);
+            }
+            not_VinllaLandingBundle_login:
+
         }
 
         // VinllaLandingBundle_homepage
@@ -105,17 +158,17 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         not_VinllaLandingBundle_homepage:
 
         // VinllaLandingBundle_feature
-        if ($pathinfo === '/feature') {
+        if (0 === strpos($pathinfo, '/fitur') && preg_match('#^/fitur/(?P<id>\\d+)\\.html$#xs', $pathinfo, $matches)) {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                 $allow = array_merge($allow, array('GET', 'HEAD'));
                 goto not_VinllaLandingBundle_feature;
             }
-            return array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::featureAction',  '_route' => 'VinllaLandingBundle_feature',);
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Vinlla\\LandingBundle\\Controller\\DefaultController::featureAction',)), array('_route' => 'VinllaLandingBundle_feature'));
         }
         not_VinllaLandingBundle_feature:
 
         // VinllaLandingBundle_download
-        if ($pathinfo === '/get-vinlla') {
+        if ($pathinfo === '/unduh-vinlla.html') {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                 $allow = array_merge($allow, array('GET', 'HEAD'));
                 goto not_VinllaLandingBundle_download;
